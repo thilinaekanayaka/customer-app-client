@@ -1,1 +1,5 @@
-<p>complaints works!</p>
+<ul>
+    <li *ngFor="let complaint of complaints">
+        <span>{{complaint.username}} : </span> {{complaint.complaint}}
+    </li>
+</ul>

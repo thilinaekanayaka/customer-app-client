@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ComplaintsService } from '../complaints.service';
 
 @Component({
   selector: 'app-complaints',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComplaintsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private complaintsService: ComplaintsService) { }
+  complaints: any;
 
   ngOnInit(): void {
+    this.getAllComplaints();
+  }
+
+  getAllComplaints() {
+    this.complaints = this.complaintsService.getComplaints();
   }
 
 }
